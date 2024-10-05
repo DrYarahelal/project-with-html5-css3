@@ -1,0 +1,589 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+    width:100vw ;
+    
+}
+.header{
+    width: 100%;
+    height: 200px;
+    top:0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    
+}
+
+.logo{
+    width: 350px;
+    height: 200px;
+    float: left;
+
+}
+.ul1{
+    display: inline-block;
+    list-style: none;
+    /* float:left; */
+    padding-top: 20px; 
+    position: relative;
+}
+.ul1 li{
+    position: relative;
+    display: inline-block;
+  margin-right: 20px  ;
+   padding: 5px;
+text-align: center;
+}
+.ul1 li a{
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 25px;
+    color: maroon;
+    display: block;
+    text-align: center;
+    position: relative;
+}
+.ul1 li::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(54, 21, 21);
+       transform: scaleX(0);
+    transform-origin: left;
+    transition: 1s;
+    }
+    .ul1 li:hover::after{
+        transform: scaleX(1);
+        transition-delay :0.2s ;
+    }    
+.ul1 li::before,
+.ul1 li::after{
+content:"";
+position: absolute;
+border-style: solid; 
+left: 0;
+top:0; 
+transition: transform 0.2s;
+}
+.ul1 li:before{
+    border-width: 0 2px;
+    height: 100%; 
+    width: 95%;
+    transform: scale(1,0);
+}
+.ul1 li:hover:before{
+ transform: scale3d(1,1,1);
+}
+.ul1 li:after{
+border-width: 2px 0;
+height: 91%; 
+width: 98%;
+transform: scale3d(0,1,1);
+transform-origin: left;
+}
+.ul1 li .a:hover:after{
+ transform: scale(1,1);
+ transition-delay: .2s;
+} 
+
+.table-content{
+    float: left;
+   margin-top: 10px;
+   
+   position: absolute;
+    width: 450px;
+    background-color: bisque;
+     opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
+    transition:transform 0.7s,ease-in-out;
+}
+
+
+.ul1:hover .table-content {
+    transform: scale(1,1);
+    opacity: 1;
+    visibility: visible;
+   
+} 
+.table-content table{
+    background-color:bisque;
+    padding-left:5px;
+    border:1px solid  #412424 ;
+    width: 450px;
+    height: 200px;
+    text-align: left;
+    position: absolute;
+}
+.table-content th,.table-content td{
+    padding: 5px,15px;
+    color: maroon;
+    text-transform: capitalize;
+    
+}
+.table-content th{
+text-decoration: dotted;
+    border-bottom: 1px dotted;
+}
+.icons{
+    color: #412424;
+   float: right;
+    font-size: 20px;
+  display: flex;
+   margin-right: 150px;
+}
+
+.icons i{
+    color:#412424;
+    justify-content:space-evenly;
+    font-size: 30px;
+    padding: 0 10px;
+  
+}
+.icons ul li{
+    display: inline-block;
+    list-style: none;
+    font-weight: bold; 
+}
+
+.icons ul li:last-child i{
+    position: relative;
+    margin-right: 11px;
+   }
+
+   .icons ul li:last-child i::after{
+       position: absolute;
+       content: "0";
+       color: #fff;
+       border-radius: 50%;
+       padding: 4px;
+       font-size: 13px;
+       bottom: -4px;
+    }
+
+
+
+
+/* ///////////////////////////////////////////////////////////////// */
+.main{
+    width: 100%;
+    height:100vh;
+    margin: auto;
+    position: relative;
+}
+.main-parent{
+    width:80%;
+    height: 80%;
+   background-image: url(../images/engagement-ring-wooden-box-style-light-silver-luxurious-shimmering-dotted_1260208-3948.jpg);
+    position:relative;
+    background-size:cover;
+    background-position:center;
+ margin-left: 10%;
+ z-index: -1;
+
+}
+.main-info{
+    margin: auto;
+    padding:10% 10%;
+    margin-left: -100px;
+
+}
+.main-title{
+font-size: 40px;
+color: antiquewhite;
+text-transform: capitalize;
+padding-bottom: 30px;
+}
+.main-btn{
+text-align: center;
+background-color:beige;
+color: rgb(114, 81, 38);
+font-size: 20px;
+width: 100px;
+height: 40px;
+margin-left: 20px;
+border: beige;
+}
+/* /////////////////////////////////////////////// */
+
+.products-container{
+    width: 100%;
+    height: 100%;
+
+}
+.products-parent{
+    padding-top: 40px;
+    width: 80%;
+    height: 90%;
+    margin: auto;
+    /* position: relative; */
+   
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-gap:50px 20px;
+   
+}
+.categories{
+    text-align: center;
+    text-transform: capitalize;
+ font-size: 30px ;
+    color: darkred;
+}
+.products-line{
+    width: 100px;
+    height: 3px;
+    margin: auto;
+    background-color: #412424;
+    margin-top: 30px;
+    transition: 1s;
+}
+.products-line:hover{
+    transform: scaleX(2);
+}
+
+.brand-story{
+    grid-column-start: 1 ;
+    grid-column-end: 3;
+}
+.products-img{
+    height: 80%;
+    width: 100%;
+}
+.six .products-img,.seven .products-img{
+    width: 100%;
+    height: 100%;
+    /* transform: scale(0); */
+    transition: 1s;
+}
+
+.six .products-img:hover, .seven .products-img:hover{
+    transform: scale(1.1);
+}
+.rings{
+
+background-image: url(../images/ring\ pro.jpg);
+background-position: center;
+background-size: cover;
+}
+.necklaces{
+
+
+background-image: url(../images/necklaces.jpg);
+background-position: center;
+background-size: cover;
+}   
+.earrings{
+    background-image: url(../images/earrings.jpg);
+    background-position: center;
+    background-size: cover;
+
+}
+.bracelets{
+     
+background-image: url(../images/bracelets.jpg);
+background-position: center;
+background-size: cover;
+}
+.sets{
+    
+background-image: url(../images/set.jpg);
+background-position: center;
+background-size: cover;
+}
+.watches{
+    
+background-image: url(../images/watch.jpg);
+background-position: center;
+background-size: cover;
+}
+.products-title{
+    color:rgb(114, 81, 38);;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.products-p{
+    color: darkred;
+    font-size: 25px;
+    text-transform: capitalize;
+}
+.products-info{
+   position: relative;
+}
+.products-info i{
+    font-size: 35px;
+    color: maroon;
+    background-color:white;
+bottom:0;
+right: 0;
+position: absolute;
+display: inline-block;
+margin-bottom: -6px;
+visibility: hidden;
+}
+.products:hover  i{
+visibility: visible;
+}
+.brand-story i{
+    color: maroon;
+    font-size: 60px;
+   /* display: inline-block; */
+   margin: 10px 10px;
+    line-height: 60px;
+    text-align: center;
+    float: left;
+
+}
+
+.story-title{
+    font-size: 30px;
+    text-transform: capitalize;
+   margin: 20px 10px;
+  
+}
+
+.subtitle{
+font-size: 20px;
+text-transform: capitalize;
+padding-left: 50px;
+margin-top: -20px;
+color: #612727;
+
+
+}
+.story-p{
+    padding-top: 20px;
+    font-size: 20px;
+    color: #612727;
+    text-align:left;
+    padding: 15px;
+}
+.products-label{
+    padding-top: 20px;
+}
+.brand-story{
+    background-color: rgb(248, 233, 216);
+}
+.products-item{
+    width: 100%;
+    height: 300px;
+}
+.item-parent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    height: 220px;
+    margin: auto;
+    padding: 50px;
+}
+.item-info{
+overflow: hidden;
+width: 20%;
+color: #604545;
+border-right: 1px solid #f17c7c;;
+text-align: center;
+}
+.last{
+    border-right: none;
+}
+.item-title{
+    padding-top: 10px;
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize;
+
+}
+.item-p{
+    font-size: 18px;
+    color: #612727;
+    text-align: center;
+    text-transform: capitalize;
+    padding-top: 10px;
+}
+.hero{
+    display: flex;
+    width: 45px;
+    height: 45px;
+    position: relative;
+}
+.icon1,.icon2{
+    height: 80px;
+    flex: 1;
+    transition: all 0.5;
+    font-size: 45px;
+    color:burlywood ;
+    padding-top: 6px;
+}
+.icon1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left:85px ;
+    margin-top: 20px;
+    transform: translate(-50%,-50%);
+    transition: 2s;
+    transition:0.7s ;
+
+}
+.icon2{
+    position: absolute;
+    top: -200%;
+    left: 50%;
+    margin-left:85px ;
+    margin-top: 20px;
+    transform: translate(-50%,-50%);
+    transition: 2s;
+    transition:0.9s ;
+    color: #412424;
+}
+.item-info:hover .icon1{
+    top: -200%;
+}
+
+.item-info:hover .icon2{
+    top: 50%;
+}
+
+.item-info:hover .icon1{
+    top: -200%;
+}
+
+.item-info:hover .icon2{
+    top: 50%;
+}
+
+/* /////////////////////////////////////////// */
+
+.featured-container{
+    width: 100%;
+   
+    margin: auto;
+    position: relative;
+    overflow: auto;
+  
+}
+.featured{
+    text-align: center;
+    text-transform: capitalize;
+ font-size: 30px ;
+    color: darkred;
+    padding-top: 20px;
+}
+.featured-line{
+    width: 100px;
+    height: 3px;
+    margin: auto;
+    background-color: #412424;
+    margin-top: 30px;
+    transition: 1s;
+}
+.featured-line:hover{
+    transform: scaleX(2);
+}
+.f-list{
+    list-style: none;
+    margin-left: 28%;
+   
+    
+}
+.f-list li{
+    text-align:center;
+    text-transform: capitalize;
+    color: maroon;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    padding:20 20px;
+   
+}
+
+.featured-parent{
+    padding-top: 40px;
+    width: 80%;
+   
+    margin: auto;
+    display:grid;
+   grid-template-columns: repeat(3,1fr);
+   grid-template-rows: repeat(3,1fr);
+   grid-gap: 70px 20px;
+  /* overflow: auto; */
+   position: relative;
+}
+.featured-item{
+    height: 300px;
+    position: relative;
+    
+   
+}
+.featured-img ,.overlay img{
+    height: 60% em;
+    /* position: relative; */
+   
+}
+.featured-img img{
+    height: 100% ;
+    width: 100%;
+  /* position: absolute; */
+   
+}
+.featured-item .overlay{
+    background-image: url(../images/overlay1.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform:scalex(0);
+    opacity: 0.5;
+    transition: transform 0.2s;    
+ }
+
+.overlay ul{
+    list-style: none;
+    display: inline-block;
+   margin-left: 90px;
+  margin-top: 30%;
+
+} 
+.overlay ul li{
+    width: 40px;
+    height: 40px;
+    background-color:#604545;
+    display: inline-block;
+    text-align: center;
+}
+.overlay li i{
+    color: #fff;
+    line-height: 40px;
+} 
+.f-title{
+  text-transform: capitalize;
+  color:rgb(231, 117, 117);
+font-size: 15px;
+   
+}
+.price{
+    display: block;
+    color: #412424;
+    margin: 5px 0;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.featured-item:hover  .overlay{
+   transform: scale(1);
+}
+.f-info i{
+    padding-top: 5px;
+    color: yellow;
+}
